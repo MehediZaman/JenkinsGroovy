@@ -9,13 +9,18 @@ def call(Map config=[:]){
 	{ 
 		writer -> 
 	    dir.eachFileRecurse(FileType.ANY){ file ->
-		if (file.isDirectory()){
-		    writer.writeLine(file.name);            
-		}
-		else
-		{
-		    writer.writeLine('\t' + file.name + '\t' + file.length());
-		}
+			if (file.isDirectory()){
+				writer.writeLine(file.name);            
+			}
+			else
+			{
+				writer.writeLine('\t' + file.name + '\t' + file.length());
+			}
+
 		} 
+	}
+
+	if(config.changes != "false"){
+		 echo "Changes";
 	}
 }
