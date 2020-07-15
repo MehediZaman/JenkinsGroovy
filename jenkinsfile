@@ -7,7 +7,7 @@ node {
 	try{
         echo 'Building....'
         echo 'Building New Feature'
-		releasenotes(changes:"false")
+		releasenotes(changes:"true")
 	}catch(ex){
         	echo 'Something went wrong'
         	echo ex.toString();
