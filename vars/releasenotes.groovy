@@ -20,6 +20,11 @@ def call(Map config=[:]){
 		} 
 	}
 
+	def date = new Date();
+	def sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+	echo "Date and Time IS: " + sdf.SimpleDateFormat(date)
+
+	echo "Build Number is: ${BUILD_NUMBER}" 
 	if(config.changes != "false"){
 		 echo "Changes";
 	}
